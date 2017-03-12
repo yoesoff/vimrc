@@ -22,6 +22,12 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'mhinz/vim-grepper'
 " 5. Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
 Plugin 'ctrlpvim/ctrlp.vim'
+" 6. Maximizes and restores the current window in Vim.
+Plugin 'szw/vim-maximizer'
+" 7. VimDevIcons adds filetype glyphs (icons) to other plugins (dep: ryanoasis/nerd-fonts#font-installation). 
+Plugin 'ryanoasis/vim-devicons'
+" 8. fatih/vim-go 
+Plugin 'fatih/vim-go'
 
 "End of Yusuf's plugin
 
@@ -48,12 +54,33 @@ set nu
 
 " NerdTree
 map <C-\> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Next tab
 map <C-Left> :tabp<CR>
 map <C-Right> :tabn<CR>
 map <C-Down> :tabclose<CR>
 map <C-Up> :tabnew<CR>
+
+" vim-maximizer
+nnoremap <silent><F3> :MaximizerToggle<CR>
+vnoremap <silent><F3> :MaximizerToggle<CR>gv
+inoremap <silent><F3> <C-o>:MaximizerToggle<CR>
+
+" Tab configuration
+" filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
+
+" Omni Complete
+set omnifunc=syntaxcomplete#Complete
+
+" VimDevIcons Iconsi
+set encoding=utf8
 
 " if PHP File
 autocmd FileType php map <C-s> :Php<CR>
