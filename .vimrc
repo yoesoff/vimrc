@@ -28,7 +28,8 @@ Plugin 'szw/vim-maximizer'
 Plugin 'ryanoasis/vim-devicons'
 " 8. fatih/vim-go 
 Plugin 'fatih/vim-go'
-
+" 9. Terminal
+Plugin 'vim-scripts/Conque-Shell'
 "End of Yusuf's plugin
 
 " All of your Plugins must` be added before the following line
@@ -97,3 +98,51 @@ augroup phpSyntaxOverride
    autocmd!
    autocmd FileType php call PhpSyntaxOverride()
 augroup END
+
+" If GO
+autocmd FileType go au vimEnter * NERDTree
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+
+au FileType go nmap <leader>ds <Plug>(go-def-split)
+au FileType go nmap <leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <leader>dt <Plug>(go-def-tab)
+
+au FileType go nmap <leader>gd <Plug>(go-doc)
+au FileType go nmap <leader>gv <Plug>(go-doc-vertical)
+
+au FileType go nmap <leader>gb <Plug>(go-doc-browser)
+
+au FileType go nmap <leader>s <Plug>(go-implements)
+
+au FileType go nmap <leader>i <Plug>(go-info)
+
+au FileType go nmap <leader>e <Plug>(go-rename)
+
+" Below are some settings you might find useful. For the full list see :he go-settings.
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+" Enable goimports to automatically insert import paths instead of gofmt:
+let g:go_fmt_command = "goimports"
+
+" By default vim-go shows errors for the fmt command, to disable it:
+let g:go_fmt_fail_silently = 1
+
+" Disable auto fmt on save:
+let g:go_fmt_autosave = 0
+
+" Disable opening browser after posting your snippet to play.golang.org:
+let g:go_play_open_browser = 0
+
+" By default when :GoInstallBinaries is called, the binaries are installed to $GOBIN or $GOPATH/bin. To change it:
+let g:go_bin_path = expand("~/.gotools")
+let g:go_bin_path = "/home/fatih/.mypath"      "or give absolute path
+
+" Disable updating dependencies when installing/updating binaries:
+let g:go_get_update = 0
