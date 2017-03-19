@@ -1,3 +1,5 @@
+#!/bin/bash
+
 export GOROOT=/usr/local/go
 export GOBIN=$GOROOT/bin
 export PATH=$PATH:$GOBIN
@@ -8,3 +10,5 @@ echo "GOBIN:" $GOBIN
 echo "GOPATH:" $GOPATH
 
 go version
+
+cd $GOPATH
