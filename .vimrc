@@ -30,6 +30,8 @@ Plugin 'ryanoasis/vim-devicons'
 Plugin 'fatih/vim-go'
 " 9. Terminal
 Plugin 'vim-scripts/Conque-Shell'
+" 10. Blade Error
+Plugin 'jwalton512/vim-blade'
 "End of Yusuf's plugin
 
 " All of your Plugins must` be added before the following line
@@ -121,6 +123,8 @@ au FileType go nmap <leader>i <Plug>(go-info)
 
 au FileType go nmap <leader>e <Plug>(go-rename)
 
+autocmd FileType php au vimEnter * NERDTree
+
 " Below are some settings you might find useful. For the full list see :he go-settings.
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
@@ -129,20 +133,20 @@ let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 " Enable goimports to automatically insert import paths instead of gofmt:
-let g:go_fmt_command = "goimports"
+" let g:go_fmt_command = "goimports"
 
 " By default vim-go shows errors for the fmt command, to disable it:
-let g:go_fmt_fail_silently = 1
+" let g:go_fmt_fail_silently = 1
 
 " Disable auto fmt on save:
-let g:go_fmt_autosave = 0
+" let g:go_fmt_autosave = 0
 
 " Disable opening browser after posting your snippet to play.golang.org:
-let g:go_play_open_browser = 0
+"let g:go_play_open_browser = 0
 
 " By default when :GoInstallBinaries is called, the binaries are installed to $GOBIN or $GOPATH/bin. To change it:
-let g:go_bin_path = expand("~/.gotools")
-let g:go_bin_path = "/home/fatih/.mypath"      "or give absolute path
+" let g:go_bin_path = expand("~/.gotools")
+" let g:go_bin_path = "/home/fatih/.mypath"      "or give absolute path
 
 " Disable updating dependencies when installing/updating binaries:
-let g:go_get_update = 0
+" let g:go_get_update = 0
