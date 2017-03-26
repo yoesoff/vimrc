@@ -40,6 +40,8 @@ Plugin 'severin-lemaignan/vim-minimap'
 Plugin 'Valloric/YouCompleteMe'
 " 14 provides insert mode auto-completion for quotes, parens, brackets, etc. 
 Plugin 'Raimondi/delimitMate'
+" 15 Comment functions so powerful
+Plugin 'scrooloose/nerdcommenter'
 "End of Yusuf's plugin
 
 " All of your Plugins must` be added before the following line
