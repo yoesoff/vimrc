@@ -25,13 +25,21 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " 6. Maximizes and restores the current window in Vim.
 Plugin 'szw/vim-maximizer'
 " 7. VimDevIcons adds filetype glyphs (icons) to other plugins (dep: ryanoasis/nerd-fonts#font-installation). 
-Plugin 'ryanoasis/vim-devicons'
-" 8. fatih/vim-go 
+Plugin 'ryanoasis/vim-devicons' 
+" 8. Gocode
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
+" 9. fatih/vim-go
 Plugin 'fatih/vim-go'
-" 9. Terminal
+" 10. Terminal
 Plugin 'vim-scripts/Conque-Shell'
-" 10. Blade Error
+" 11. Blade Error
 Plugin 'jwalton512/vim-blade'
+" 12. Mini map
+Plugin 'severin-lemaignan/vim-minimap'
+" 13 Code completion
+Plugin 'Valloric/YouCompleteMe'
+" 14 provides insert mode auto-completion for quotes, parens, brackets, etc. 
+Plugin 'Raimondi/delimitMate'
 "End of Yusuf's plugin
 
 " All of your Plugins must` be added before the following line
