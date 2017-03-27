@@ -42,6 +42,10 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'Raimondi/delimitMate'
 " 15 Comment functions so powerful
 Plugin 'scrooloose/nerdcommenter'
+" Auto save
+Plugin '907th/vim-auto-save'
+" NerdTree GIT support
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 "End of Yusuf's plugin
 
 " All of your Plugins must` be added before the following line
@@ -62,12 +66,13 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 
-execute pathogen#infect()
+" execute pathogen#infect()
 set nu
 
 " NerdTree
 map <C-\> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let NERDTreeShowHidden=1
 
 " Next tab
 map <C-Left> :tabp<CR>
@@ -160,3 +165,24 @@ let g:go_highlight_build_constraints = 1
 
 " Disable updating dependencies when installing/updating binaries:
 " let g:go_get_update = 0
+
+" \s to save (except in go file)
+noremap <Leader>s :update<CR>
+
+" Auto save confguration
+let g:auto_save = 1  " enable AutoSave on Vim startup
+let g:auto_save_events = ["InsertLeave", "TextChanged"]
+
+" NerdTree Git Plugin
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }

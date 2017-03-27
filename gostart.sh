@@ -15,5 +15,4 @@ echo "GOSRC  : " $GOSRC
 echo "GOPKG  : " $GOPKG
 echo "GOPATH : " $GOPATH
 
-
 cd $GOPATH
