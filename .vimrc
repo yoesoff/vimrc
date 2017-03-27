@@ -5,7 +5,7 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -148,7 +148,7 @@ let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 " Enable goimports to automatically insert import paths instead of gofmt:
-" let g:go_fmt_command = "goimports"
+let g:go_fmt_command = "goimports"
 
 " By default vim-go shows errors for the fmt command, to disable it:
 " let g:go_fmt_fail_silently = 1
@@ -172,6 +172,17 @@ noremap <Leader>s :update<CR>
 " Auto save confguration
 let g:auto_save = 1  " enable AutoSave on Vim startup
 let g:auto_save_events = ["InsertLeave", "TextChanged"]
+" This will run AbortIfNotGitDirectory function before each save
+let g:auto_save_presave_hook = 'call AbortIfNotGitDirectory()'
+" Example hook from vim-auto-save-git-hook plugin
+function! AbortIfNotGitDirectory()
+  " TODO: Should only work under git folder
+  "if ...
+    "let g:auto_save_abort = 0
+  "else
+    "let g:auto_save_abort = 1
+  "endif
+endfunction
 
 " NerdTree Git Plugin
 let g:NERDTreeIndicatorMapCustom = {
