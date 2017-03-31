@@ -46,6 +46,8 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin '907th/vim-auto-save'
 " NerdTree GIT support
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+" Easy search, search text in folders/files
+Plugin 'dkprice/vim-easygrep'
 "End of Yusuf's plugin
 
 " All of your Plugins must` be added before the following line
