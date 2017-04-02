@@ -35,27 +35,29 @@ Plugin 'vim-scripts/Conque-Shell'
 " 11. Blade Error
 Plugin 'jwalton512/vim-blade'
 " 12. Mini map
-Plugin 'severin-lemaignan/vim-minimap'
-" 13 Code completion
+" Plugin 'severin-lemaignan/vim-minimap' "useless
+" 13. Code completion
 Plugin 'Valloric/YouCompleteMe'
-" 14 provides insert mode auto-completion for quotes, parens, brackets, etc. 
+" 14. provides insert mode auto-completion for quotes, parens, brackets, etc. 
 Plugin 'Raimondi/delimitMate'
-" 15 Comment functions so powerful
+" 15. Comment functions so powerful
 Plugin 'scrooloose/nerdcommenter'
-" Auto save
-" Plugin '907th/vim-auto-save' " Makes a lot fo trouble
-" NerdTree GIT support
+" 16. NerdTree GIT support
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-" Easy search, search text in folders/files
+" 17. Easy search, search text in folders/files
 Plugin 'dkprice/vim-easygrep'
+" 18. A Vim plugin for displaying changes in a buffer
+Plugin 'chrisbra/changesPlugin'
+" Themes
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 "End of Yusuf's plugin
 
 " All of your Plugins must` be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
-"filetype plugin on
-
+" filetype plugin on
 " Brief help
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just
@@ -63,12 +65,11 @@ filetype plugin indent on    " required
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
 " :PluginClean      - confirms removal of unused plugins; append `!` to
 " auto-approve removal
-
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-
-" execute pathogen#infect()
+" Activate changes indicator
+autocmd bufenter EC
 set nu
 
 " NerdTree
@@ -120,27 +121,20 @@ augroup END
 
 " If GO
 autocmd FileType go au vimEnter * NERDTree
+autocmd FileType php au vimEnter * NERDTree
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
-
 au FileType go nmap <leader>ds <Plug>(go-def-split)
 au FileType go nmap <leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <leader>dt <Plug>(go-def-tab)
-
 au FileType go nmap <leader>gd <Plug>(go-doc)
 au FileType go nmap <leader>gv <Plug>(go-doc-vertical)
-
 au FileType go nmap <leader>gb <Plug>(go-doc-browser)
-
 au FileType go nmap <leader>s <Plug>(go-implements)
-
 au FileType go nmap <leader>i <Plug>(go-info)
-
 au FileType go nmap <leader>e <Plug>(go-rename)
-
-autocmd FileType php au vimEnter * NERDTree
 
 " Below are some settings you might find useful. For the full list see :he go-settings.
 let g:go_highlight_functions = 1
@@ -151,40 +145,17 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 " Enable goimports to automatically insert import paths instead of gofmt:
 let g:go_fmt_command = "goimports"
-
 " By default vim-go shows errors for the fmt command, to disable it:
 " let g:go_fmt_fail_silently = 1
-
 " Disable auto fmt on save:
 " let g:go_fmt_autosave = 0
-
 " Disable opening browser after posting your snippet to play.golang.org:
 "let g:go_play_open_browser = 0
-
 " By default when :GoInstallBinaries is called, the binaries are installed to $GOBIN or $GOPATH/bin. To change it:
 " let g:go_bin_path = expand("~/.gotools")
 " let g:go_bin_path = "/home/fatih/.mypath"      "or give absolute path
-
 " Disable updating dependencies when installing/updating binaries:
 " let g:go_get_update = 0
-
-" \s to save (except in go file)
-noremap <Leader>s :update<CR>
-
-" Auto save confguration
-"let g:auto_save = 1  " enable AutoSave on Vim startup
-"let g:auto_save_events = ["InsertLeave", "TextChanged"]
-"" This will run AbortIfNotGitDirectory function before each save
-"let g:auto_save_presave_hook = 'call AbortIfNotGitDirectory()'
-"" Example hook from vim-auto-save-git-hook plugin
-"function! AbortIfNotGitDirectory()
-  "" TODO: Should only work under git folder
-  ""if ...
-    ""let g:auto_save_abort = 0
-  ""else
-    ""let g:auto_save_abort = 1
-  ""endif
-"endfunction
 
 " NerdTree Git Plugin
 let g:NERDTreeIndicatorMapCustom = {
@@ -199,3 +170,11 @@ let g:NERDTreeIndicatorMapCustom = {
     \ 'Ignored'   : '☒',
     \ "Unknown"   : "?"
     \ }
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline_theme='simple'
+
+
+
