@@ -1,0 +1,14 @@
+Vim cheatsheet
+
+Grepper
+grep -irn 'string yang dicari' **/*.php
+:lgrep 'quiz_result' **/*.php
+
+
+List of Buffers
+Buka buffer sebelumnya
+:e#
+buka buffer. (n = 1,2,3,..)
+:e#n
+
+

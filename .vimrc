@@ -43,7 +43,7 @@ Plugin 'Raimondi/delimitMate'
 " 15 Comment functions so powerful
 Plugin 'scrooloose/nerdcommenter'
 " Auto save
-Plugin '907th/vim-auto-save'
+" Plugin '907th/vim-auto-save' " Makes a lot fo trouble
 " NerdTree GIT support
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Easy search, search text in folders/files
@@ -172,19 +172,19 @@ let g:go_fmt_command = "goimports"
 noremap <Leader>s :update<CR>
 
 " Auto save confguration
-let g:auto_save = 1  " enable AutoSave on Vim startup
-let g:auto_save_events = ["InsertLeave", "TextChanged"]
-" This will run AbortIfNotGitDirectory function before each save
-let g:auto_save_presave_hook = 'call AbortIfNotGitDirectory()'
-" Example hook from vim-auto-save-git-hook plugin
-function! AbortIfNotGitDirectory()
-  " TODO: Should only work under git folder
-  "if ...
-    "let g:auto_save_abort = 0
-  "else
-    "let g:auto_save_abort = 1
-  "endif
-endfunction
+"let g:auto_save = 1  " enable AutoSave on Vim startup
+"let g:auto_save_events = ["InsertLeave", "TextChanged"]
+"" This will run AbortIfNotGitDirectory function before each save
+"let g:auto_save_presave_hook = 'call AbortIfNotGitDirectory()'
+"" Example hook from vim-auto-save-git-hook plugin
+"function! AbortIfNotGitDirectory()
+  "" TODO: Should only work under git folder
+  ""if ...
+    ""let g:auto_save_abort = 0
+  ""else
+    ""let g:auto_save_abort = 1
+  ""endif
+"endfunction
 
 " NerdTree Git Plugin
 let g:NERDTreeIndicatorMapCustom = {
