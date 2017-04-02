@@ -48,9 +48,12 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'dkprice/vim-easygrep'
 " 18. A Vim plugin for displaying changes in a buffer
 Plugin 'chrisbra/changesPlugin'
-" Themes
+" 19. Themes
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+" 20. Match tag
+Plugin 'Valloric/MatchTagAlways'
+" 21. Buffer Navigator
 "End of Yusuf's plugin
 
 " All of your Plugins must` be added before the following line
@@ -76,12 +79,6 @@ set nu
 map <C-\> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeShowHidden=1
-
-" Next tab
-map <C-Left> :tabp<CR>
-map <C-Right> :tabn<CR>
-map <C-Down> :tabclose<CR>
-map <C-Up> :tabnew<CR>
 
 " vim-maximizer
 nnoremap <silent><F3> :MaximizerToggle<CR>
@@ -135,6 +132,7 @@ au FileType go nmap <leader>gb <Plug>(go-doc-browser)
 au FileType go nmap <leader>s <Plug>(go-implements)
 au FileType go nmap <leader>i <Plug>(go-info)
 au FileType go nmap <leader>e <Plug>(go-rename)
+au BufReadPost *.gtpl set syntax=html
 
 " Below are some settings you might find useful. For the full list see :he go-settings.
 let g:go_highlight_functions = 1
@@ -174,7 +172,13 @@ let g:NERDTreeIndicatorMapCustom = {
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_theme='simple'
+let g:airline_theme='base16'
 
-
-
+let g:mta_use_matchparen_group = 1
+let g:mta_filetypes = {
+    \ 'html' : 1,
+    \ 'xhtml' : 1,
+    \ 'xml' : 1,
+    \ 'jinja' : 1,
+    \ 'gtpl' : 1,
+    \}

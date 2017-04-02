@@ -1,14 +1,22 @@
 Vim cheatsheet
 
-Grepper
+* Navigation
+A to move to the end of the line and switch to editing
+I to move to the beginning of the line and switch to editing
+
+* Grepper
 grep -irn 'string yang dicari' **/*.php
 :lgrep 'quiz_result' **/*.php
 
 
-List of Buffers
+* List of Buffers
 Buka buffer sebelumnya
 :e#
 buka buffer. (n = 1,2,3,..)
 :e#n
-
+remove n buffer
+:nbw / :nbw!
+New buffer
+:new will create a split window with an unnamed buffer.
+:enew will open one in the current window.
 
