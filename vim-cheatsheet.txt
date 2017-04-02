@@ -13,9 +13,9 @@ grep -irn 'string yang dicari' **/*.php
 Buka buffer sebelumnya
 :e#
 buka buffer. (n = 1,2,3,..)
-:e#n
+:e#n  / :buff 4
 remove n buffer
-:nbw / :nbw!
+:nbw / :nbw!:q
 New buffer
 :new will create a split window with an unnamed buffer.
 :enew will open one in the current window.

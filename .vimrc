@@ -51,9 +51,11 @@ Plugin 'chrisbra/changesPlugin'
 " 19. Themes
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-" 20. Match tag
+" 20 Buffer info
+Plugin 'bling/vim-bufferline'
+" 21. Match tag
 Plugin 'Valloric/MatchTagAlways'
-" 21. Buffer Navigator
+" 22. Buffer Navigator
 "End of Yusuf's plugin
 
 " All of your Plugins must` be added before the following line
@@ -172,7 +174,7 @@ let g:NERDTreeIndicatorMapCustom = {
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_theme='base16'
+let g:airline_theme='bubblegum'
 
 let g:mta_use_matchparen_group = 1
 let g:mta_filetypes = {
@@ -182,3 +184,9 @@ let g:mta_filetypes = {
     \ 'jinja' : 1,
     \ 'gtpl' : 1,
     \}
+
+" Airline fonts
+let g:airline_powerline_fonts = 1
+
+" Close current buffer
+nmap <leader>q :bp <BAR> bd #<CR>
