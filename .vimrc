@@ -1,5 +1,9 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
+filetype on                   " required
+filetype plugin indent on
+syntax on
+set hidden
+set backspace=indent,eol,start
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -16,63 +20,37 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'StanAngeloff/php.vim'
 " 2. PHP Linter
 Plugin 'https://github.com/joonty/vim-phpqa'
-" 3. Tree windows
+" 3. Blade Error
+Plugin 'jwalton512/vim-blade'
+" 4. Tree windows
 Plugin 'scrooloose/nerdtree'
-" 4. Grepper
-Plugin 'mhinz/vim-grepper'
 " 5. Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
 Plugin 'ctrlpvim/ctrlp.vim'
-" 6. Maximizes and restores the current window in Vim.
-Plugin 'szw/vim-maximizer'
-" 7. VimDevIcons adds filetype glyphs (icons) to other plugins (dep: ryanoasis/nerd-fonts#font-installation). 
-Plugin 'ryanoasis/vim-devicons' 
-" 8. Gocode
-Plugin 'nsf/gocode', {'rtp': 'vim/'}
-" 9. fatih/vim-go
+" 6. fatih/vim-go Don't forget to run :GoInstallBinaries
 Plugin 'fatih/vim-go'
-" 10. Terminal
-Plugin 'vim-scripts/Conque-Shell'
-" 11. Blade Error
-Plugin 'jwalton512/vim-blade'
-" 12. Mini map
-" Plugin 'severin-lemaignan/vim-minimap' "useless
-" 13. Code completion
+" 7. Gocode, don't forget to run go get -u github.com/nsf/gocode
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
+" 8. Code completion
 Plugin 'Valloric/YouCompleteMe'
-" 14. provides insert mode auto-completion for quotes, parens, brackets, etc. 
+" 9. provides insert mode auto-completion for quotes, parens, brackets, etc. 
 Plugin 'Raimondi/delimitMate'
-" 15. Comment functions so powerful
+" 10. Comment functions so powerful
 Plugin 'scrooloose/nerdcommenter'
-" 16. NerdTree GIT support
+" 11. NerdTree GIT support
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-" 17. Easy search, search text in folders/files
-Plugin 'dkprice/vim-easygrep'
-" 18. A Vim plugin for displaying changes in a buffer
+" 12. A Vim plugin for displaying changes in a buffer
 Plugin 'chrisbra/changesPlugin'
-" 19. Themes
+" 13. Themes
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-" 20 Buffer info
+" 14 Buffer info
 Plugin 'bling/vim-bufferline'
-" 21. Match tag
+" 15. Match tag, show matched tag
 Plugin 'Valloric/MatchTagAlways'
-" 22. Buffer Navigator
 "End of Yusuf's plugin
 
 " All of your Plugins must` be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-" filetype plugin on
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just
-" :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to
-" auto-approve removal
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
 " Activate changes indicator
 autocmd bufenter EC
 set nu
@@ -96,10 +74,10 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 
-" Omni Complete
+" Omni Complete, vim builtin
 set omnifunc=syntaxcomplete#Complete
 
-" VimDevIcons Iconsi
+" VimDevIcons Icons
 set encoding=utf8
 
 " if PHP File
