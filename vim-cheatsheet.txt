@@ -8,6 +8,8 @@ I to move to the beginning of the line and switch to editing
 grep -irn 'string yang dicari' **/*.php
 :lgrep 'quiz_result' **/*.php
 
+* find file by name
+find .  -name '*User.php'
 
 * List of Buffers
 Buka buffer sebelumnya
