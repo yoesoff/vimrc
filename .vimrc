@@ -45,7 +45,9 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 " 14 Buffer info
 Plugin 'bling/vim-bufferline'
-" 15. Match tag, show matched tag
+" A set of mappings for HTML, XML, PHP, ASP, eRuby, JSP, and more (formerly allml)
+Plugin 'tpope/vim-ragtag'
+" Always highlight enclosing tags
 Plugin 'Valloric/MatchTagAlways'
 "End of Yusuf's plugin
 
@@ -153,15 +155,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_theme='bubblegum'
-
-let g:mta_use_matchparen_group = 1
-let g:mta_filetypes = {
-    \ 'html' : 1,
-    \ 'xhtml' : 1,
-    \ 'xml' : 1,
-    \ 'jinja' : 1,
-    \ 'gtpl' : 1,
-    \}
 
 " Airline fonts
 let g:airline_powerline_fonts = 1

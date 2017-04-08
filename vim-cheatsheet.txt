@@ -22,3 +22,15 @@ New buffer
 :new will create a split window with an unnamed buffer.
 :enew will open one in the current window.
 
+Suspend Process
+
+Minimize
+ctrl + z
+List suspended jobs
+jobs 
+Open specific jobs
+fg %x
+Kill specific jobs
+kill %x
+
+
