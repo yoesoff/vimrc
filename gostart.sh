@@ -16,3 +16,5 @@ echo "GOPKG  : " $GOPKG
 echo "GOPATH : " $GOPATH
 
 cd $GOPATH
+
+PATH=$GOBIN:$PATH

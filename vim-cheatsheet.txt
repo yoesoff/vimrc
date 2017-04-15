@@ -4,8 +4,15 @@ Vim cheatsheet
 A to move to the end of the line and switch to editing
 I to move to the beginning of the line and switch to editing
 
+* Delete
+dw delete forward
+db delete backward
+d0 delete current to beginning
+d$ will delete from current position to end of line
+dd cut
+
 * Grepper
-grep -irn 'string yang dicari' **/*.php
+grep -irn 'your_string_data' **/*.php
 :lgrep 'quiz_result' **/*.php
 
 * find file by name
@@ -15,7 +22,7 @@ find .  -name '*User.php'
 Buka buffer sebelumnya
 :e#
 buka buffer. (n = 1,2,3,..)
-:e#n  / :buff 4
+:e#n  / :buff 4 / :b1
 remove n buffer
 :nbw / :nbw!:q
 New buffer
