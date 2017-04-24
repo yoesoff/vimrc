@@ -98,9 +98,12 @@ augroup phpSyntaxOverride
    autocmd FileType php call PhpSyntaxOverride()
 augroup END
 
-" If GO
+" Toggle NerdTree
 autocmd FileType go au vimEnter * NERDTree
 autocmd FileType php au vimEnter * NERDTree
+autocmd FileType js au vimEnter * NERDTree
+
+" If Go
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
@@ -161,3 +164,5 @@ let g:airline_powerline_fonts = 1
 
 " Close current buffer
 nmap <leader>q :bp <BAR> bd #<CR>
+" Save the current file, while keeping it open
+noremap <Leader>s :update<CR>
