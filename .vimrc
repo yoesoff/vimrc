@@ -166,3 +166,5 @@ let g:airline_powerline_fonts = 1
 nmap <leader>q :bp <BAR> bd #<CR>
 " Save the current file, while keeping it open
 noremap <Leader>s :update<CR>
+" Mapped Escape to jj 
+imap jj <ESC>
