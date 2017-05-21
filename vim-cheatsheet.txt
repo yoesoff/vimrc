@@ -1,15 +1,15 @@
 Vim cheatsheet
 
 * Navigation
-A to move to the end of the line and switch to editing
-I to move to the beginning of the line and switch to editing
+A - to move to the end of the line and switch to editing
+I - to move to the beginning of the line and switch to editing
 
 * Delete
-dw delete forward
-db delete backward
-d0 delete current to beginning
-d$ will delete from current position to end of line
-dd cut
+dw - delete forward
+db - delete backward
+d0 - delete current to beginning
+d$ - will delete from current position to end of line
+dd - cut
 
 * Grepper
 grep -irn 'your_string_data' **/*.php
@@ -19,25 +19,23 @@ grep -irn 'your_string_data' **/*.php
 find .  -name '*User.php'
 
 * List of Buffers
-Buka buffer sebelumnya
-:e#
-buka buffer. (n = 1,2,3,..)
-:e#n  / :buff 4 / :b1
-remove n buffer
-:nbw / :nbw!:q
+
+:e# / :bn              - Buka buffer sebelumnya
+:e#n  / :buff 4 / :b1  - Buka buffer. (n = 1,2,3,..)
+:nbw / :nbw!:q / \q    - Remove n buffer
 New buffer
-:new will create a split window with an unnamed buffer.
-:enew will open one in the current window.
+:new   - will create a split window with an unnamed buffer.
+:enew  - will open one in the current window.
 
 Suspend Process
-
-Minimize
-ctrl + z
-List suspended jobs
-jobs 
-Open specific jobs
-fg %x
-Kill specific jobs
-kill %x
+ctrl + z  -  Minimize VIM
+jobs      -  List suspended jobs
+fg %x     -  Open specific jobs
+kill %x   -  Kill specific jobs
 
 
+Fold Function
+zo - opens folds
+zc - closes fold
+zm - increases auto fold depth
+zr - reduces auto fold depth

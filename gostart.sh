@@ -1,6 +1,6 @@
 #!/bin/bash
 
-gvm use go1.7
+gvm use go1.6
 
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go-learn2

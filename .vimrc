@@ -49,6 +49,8 @@ Plugin 'bling/vim-bufferline'
 Plugin 'tpope/vim-ragtag'
 " Always highlight enclosing tags
 Plugin 'Valloric/MatchTagAlways'
+" Nodejs
+Plugin 'moll/vim-node'
 "End of Yusuf's plugin
 
 " All of your Plugins must` be added before the following line
@@ -102,6 +104,9 @@ augroup END
 autocmd FileType go au vimEnter * NERDTree
 autocmd FileType php au vimEnter * NERDTree
 autocmd FileType js au vimEnter * NERDTree
+
+" Hide files
+let NERDTreeIgnore=['\.swp$', '\~$']
 
 " If Go
 au FileType go nmap <leader>r <Plug>(go-run)
@@ -168,3 +173,5 @@ nmap <leader>q :bp <BAR> bd #<CR>
 noremap <Leader>s :update<CR>
 " Mapped Escape to jj 
 imap jj <ESC>
+
+
