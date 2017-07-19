@@ -62,7 +62,7 @@ set nu
 " NerdTree
 map <C-\> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-let NERDTreeShowHidden=1
+let NERDTreeShowHidden=0
 
 " vim-maximizer
 nnoremap <silent><F3> :MaximizerToggle<CR>
@@ -106,7 +106,7 @@ autocmd FileType php au vimEnter * NERDTree
 autocmd FileType js au vimEnter * NERDTree
 
 " Hide files
-let NERDTreeIgnore=['\.swp$', '\~$']
+" let NERDTreeIgnore=['\.swp$', '\~$']
 
 " If Go
 au FileType go nmap <leader>r <Plug>(go-run)
@@ -173,5 +173,6 @@ nmap <leader>q :bp <BAR> bd #<CR>
 noremap <Leader>s :update<CR>
 " Mapped Escape to jj 
 imap jj <ESC>
+imap JJ <ESC>
 
-
+au BufNewFile,BufRead *.html set filetype=htmldjango
