@@ -18,6 +18,9 @@ grep -irn 'your_string_data' **/*.php
 * find file by name
 find .  -name '*User.php'
 
+* replace string
+:4,15s/character/string/g
+
 * List of Buffers
 
 :e# / :bn              - Buka buffer sebelumnya
