@@ -42,3 +42,6 @@ zo - opens folds
 zc - closes fold
 zm - increases auto fold depth
 zr - reduces auto fold depth
+
+Reveal current File
+:NERDTreeFind

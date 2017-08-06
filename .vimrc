@@ -51,6 +51,8 @@ Plugin 'tpope/vim-ragtag'
 Plugin 'Valloric/MatchTagAlways'
 " Nodejs
 Plugin 'moll/vim-node'
+" Buffer explorer
+Plugin 'vim-scripts/LustyExplorer'
 "End of Yusuf's plugin
 
 " All of your Plugins must` be added before the following line
