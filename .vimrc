@@ -53,7 +53,17 @@ Plugin 'Valloric/MatchTagAlways'
 Plugin 'moll/vim-node'
 " Buffer explorer
 Plugin 'vim-scripts/LustyExplorer'
+" TagBar
+Plugin 'majutsushi/tagbar'
+" Javascript and JSX
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+" Jquery
+Plugin 'itspriddle/vim-jquery'
+" JS Linter
+Plugin 'w0rp/ale'
 "End of Yusuf's plugin
+
 
 " All of your Plugins must` be added before the following line
 call vundle#end()            " required
@@ -178,3 +188,39 @@ imap jj <ESC>
 imap JJ <ESC>
 
 au BufNewFile,BufRead *.html set filetype=htmldjango
+nmap <F8> :TagbarToggle<CR>
+
+let g:tagbar_type_go = {
+	\ 'ctagstype' : 'go',
+	\ 'kinds'     : [
+		\ 'p:package',
+		\ 'i:imports:1',
+		\ 'c:constants',
+		\ 'v:variables',
+		\ 't:types',
+		\ 'n:interfaces',
+		\ 'w:fields',
+		\ 'e:embedded',
+		\ 'm:methods',
+		\ 'r:constructor',
+		\ 'f:functions'
+	\ ],
+	\ 'sro' : '.',
+	\ 'kind2scope' : {
+		\ 't' : 'ctype',
+		\ 'n' : 'ntype'
+	\ },
+	\ 'scope2kind' : {
+		\ 'ctype' : 't',
+		\ 'ntype' : 'n'
+	\ },
+	\ 'ctagsbin'  : 'gotags',
+	\ 'ctagsargs' : '-sort -silent'
+\ }
+
+" Js code completion
+" let g:javascript_plugin_flow = 1
+" let g:jsx_ext_required = 0
+" https://jaxbot.me/articles/setting-up-vim-for-react-js-jsx-02-03-2015
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+let g:syntastic_javascript_checkers = ['eslint']
