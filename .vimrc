@@ -58,13 +58,10 @@ Plugin 'majutsushi/tagbar'
 " Javascript and JSX
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
-" Jquery
-Plugin 'itspriddle/vim-jquery'
 " JS Linter
 Plugin 'w0rp/ale'
-"End of Yusuf's plugin
-
-
+" This is a Vim plugin that provides Tern-based JavaScript editing support.
+Plugin 'ternjs/tern_for_vim'
 " All of your Plugins must` be added before the following line
 call vundle#end()            " required
 " Activate changes indicator
@@ -99,7 +96,6 @@ set encoding=utf8
 " if PHP File
 autocmd FileType php map <C-s> :Php<CR>
 autocmd FileType php map <C-a> :Phpcs<CR>
-autocmd FileType php au vimEnter * NERDTree
 
 " Put at the very end of your .vimrc file.
 function! PhpSyntaxOverride()
@@ -115,7 +111,7 @@ augroup END
 " Toggle NerdTree
 autocmd FileType go au vimEnter * NERDTree
 autocmd FileType php au vimEnter * NERDTree
-autocmd FileType js au vimEnter * NERDTree
+autocmd FileType javascript au vimEnter * NERDTree
 
 " Hide files
 " let NERDTreeIgnore=['\.swp$', '\~$']
@@ -217,10 +213,3 @@ let g:tagbar_type_go = {
 	\ 'ctagsbin'  : 'gotags',
 	\ 'ctagsargs' : '-sort -silent'
 \ }
-
-" Js code completion
-" let g:javascript_plugin_flow = 1
-" let g:jsx_ext_required = 0
-" https://jaxbot.me/articles/setting-up-vim-for-react-js-jsx-02-03-2015
-let g:jsx_ext_required = 0 " Allow JSX in normal JS files
-let g:syntastic_javascript_checkers = ['eslint']
