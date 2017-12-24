@@ -5,11 +5,26 @@ syntax on
 set hidden
 set backspace=indent,eol,start
 
+set nocompatible            " Disable compatibility to old-time vi
+set showmatch               " Show matching brackets.
+set ignorecase              " Do case insensitive matching
+set mouse=v                 " middle-click paste with mouse
+set hlsearch                " highlight search results
+set tabstop=4               " number of columns occupied by a tab character
+set softtabstop=4           " see multiple spaces as tabstops so <BS> does the right thing
+set expandtab               " converts tabs to white space
+set shiftwidth=4            " width for autoindents
+set autoindent              " indent a new line the same amount as the line just typed
+set number                  " add line numbers
+set wildmode=longest,list   " get bash-like tab completions
+set cc=80                   " set an 80 column border for good coding style
+nnoremap <leader>s :set invspell<CR>
+
 " set the runtime path to include Vundle and initialize
+
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
-" call vundle#begin('~/some/path/here')
+call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -78,15 +93,6 @@ nnoremap <silent><F3> :MaximizerToggle<CR>
 vnoremap <silent><F3> :MaximizerToggle<CR>gv
 inoremap <silent><F3> <C-o>:MaximizerToggle<CR>
 
-" Tab configuration
-" filetype plugin indent on
-" show existing tab with 4 spaces width
-set tabstop=4
-" when indenting with '>', use 4 spaces width
-set shiftwidth=4
-" On pressing tab, insert 4 spaces
-set expandtab
-
 " Omni Complete, vim builtin
 set omnifunc=syntaxcomplete#Complete
 
@@ -97,16 +103,6 @@ set encoding=utf8
 autocmd FileType php map <C-s> :Php<CR>
 autocmd FileType php map <C-a> :Phpcs<CR>
 
-" Put at the very end of your .vimrc file.
-function! PhpSyntaxOverride()
-   hi! def link phpDocTags  phpDefine
-   hi! def link phpDocParam phpType
-endfunction
-
-augroup phpSyntaxOverride
-   autocmd!
-   autocmd FileType php call PhpSyntaxOverride()
-augroup END
 
 " Toggle NerdTree
 autocmd FileType go au vimEnter * NERDTree
@@ -213,3 +209,16 @@ let g:tagbar_type_go = {
 	\ 'ctagsbin'  : 'gotags',
 	\ 'ctagsargs' : '-sort -silent'
 \ }
+
+" Put at the very end of your .vimrc file.
+function! PhpSyntaxOverride()
+   hi! def link phpDocTags  phpDefine
+   hi! def link phpDocParam phpType
+endfunction
+
+augroup phpSyntaxOverride
+   autocmd!
+   autocmd FileType php call PhpSyntaxOverride()
+augroup END
+
+au BufReadPost *.vue set syntax=html
