@@ -18,23 +18,15 @@ set autoindent              " indent a new line the same amount as the line just
 set number                  " add line numbers
 set wildmode=longest,list   " get bash-like tab completions
 set cc=80                   " set an 80 column border for good coding style
-
-au FileType html set softtabstop=2
-au FileType javascript set softtabstop=2
-
-au FileType html set tabstop=2
-au FileType javascript set tabstop=2
-
-au FileType html set shiftwidth=2
-au FileType javascript set shiftwidth=2
-
 nnoremap <leader>s :set invspell<CR>
 
 " set the runtime path to include Vundle and initialize
 
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.config/nvim/bundle/Vundle.vim
+call vundle#begin('~/.config/nvim/bundle')
+
 " alternatively, pass a path where Vundle should install plugins
-call vundle#begin()
+" call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -231,4 +223,3 @@ augroup phpSyntaxOverride
    autocmd FileType php call PhpSyntaxOverride()
 augroup END
 
-au BufReadPost *.vue set syntax=html
