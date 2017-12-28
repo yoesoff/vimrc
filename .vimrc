@@ -87,11 +87,22 @@ Plugin 'mxw/vim-jsx'
 Plugin 'w0rp/ale'
 " This is a Vim plugin that provides Tern-based JavaScript editing support.
 Plugin 'ternjs/tern_for_vim'
+" Vim syntax highlighting for Vue components.
+" npm i -g eslint eslint-plugin-vue
+Plugin 'posva/vim-vue'
+" Auto close (X)HTML tags
+Plugin 'alvan/vim-closetag'
+" HTML5 + inline SVG omnicomplete function, indent and syntax for Vim.
+Plugin 'othree/html5.vim'
+
 " All of your Plugins must` be added before the following line
 call vundle#end()            " required
+
+let g:closetag_filenames = "*.twig,*.tmpl,*.vue,*.xml,*.html,*.xhtml,*.phtml,*.php"
+au FileType twig,tmpl,vue,xml,html,phtml,php,xhtml,js let b:delimitMate_matchpairs = "(:),[:],{:}"
+
 " Activate changes indicator
 autocmd bufenter EC
-set nu
 
 " NerdTree
 map <C-\> :NERDTreeToggle<CR>
